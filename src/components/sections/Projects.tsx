@@ -106,28 +106,28 @@ const Projects = () => {
           {projects.map((project) => (
             <Card 
               key={project.id} 
-              className="group overflow-hidden border-0 bg-white/80 backdrop-blur-sm hover:bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
+              className="group overflow-hidden border transition-all duration-500 hover:shadow-xl hover:-translate-y-2"
             >
               {/* Project Image */}
-              <div className="relative overflow-hidden h-64 bg-gradient-to-br from-muted to-muted-dark">
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-500`}></div>
+              <div className="relative overflow-hidden h-64 bg-muted">
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Monitor className="w-24 h-24 text-muted-foreground/20" />
+                  <Monitor className="w-24 h-24 text-muted-foreground/30" />
                 </div>
                 
                 {/* Featured Badge */}
                 {project.featured && (
                   <div className="absolute top-4 left-4">
-                    <Badge className="bg-gradient-to-r from-primary to-secondary text-white border-0">
+                    <Badge className="bg-gradient-to-r from-primary to-secondary text-primary-foreground border-0">
                       Featured
                     </Badge>
                   </div>
                 )}
                 
                 {/* Overlay Links */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6 gap-3">
+                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6 gap-3">
                   <Button 
-                    variant="glass" 
+                    variant="default" 
                     size="sm"
                     className="hover-scale"
                   >
@@ -135,7 +135,7 @@ const Projects = () => {
                     Live Site
                   </Button>
                   <Button 
-                    variant="glass" 
+                    variant="secondary" 
                     size="sm"
                     className="hover-scale"
                   >
@@ -182,7 +182,7 @@ const Projects = () => {
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <div className="glass-card p-8 rounded-2xl max-w-2xl mx-auto">
+          <Card className="p-8 max-w-2xl mx-auto bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
             <h3 className="text-2xl font-bold mb-4">
               Ready to Start Your Project?
             </h3>
@@ -199,7 +199,7 @@ const Projects = () => {
                 View All Projects
               </Button>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </section>
